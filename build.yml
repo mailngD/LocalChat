@@ -1,13 +1,13 @@
 name: 构建 Android APK
 
-开启:
+on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
 jobs:
 构建:
-: ubuntu-latest
+运行于: ubuntu-latest
 步骤:
       - 名称: 签出代码
 使用: actions/checkout@v3
@@ -15,7 +15,7 @@ jobs:
       - 名称: 设置 JDK 17
 使用: actions/setup-java@v3
         with:
-java版本: '17'
+Java版本: '17'
 发行版: 'temurin'
           
       - name: 设置 Android SDK
